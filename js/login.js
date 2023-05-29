@@ -10,8 +10,16 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
       if (email != "" && password != "") {
         console.log(`Login with: Email: ${email}, Password: ${password}`);
-        localStorage.setItem("loggedIn", true);
-        window.location.href = "index.html";
+        if (email == 'client@gmail.com') {
+          localStorage.setItem("type", "client");
+          window.location.href = "clientBankAccounts.html";
+        } else if (email == 'banker@gmail.com') {
+          localStorage.setItem("type", "banker");
+          window.location.href = "bankerOnlineAccountApplications.html";
+        } else if (email == 'admin@gmail.com') {
+          window.location.href = "adminReports.html";
+          localStorage.setItem("type", "admin");
+        }
       }
 
     });

@@ -8,15 +8,14 @@ window.addEventListener("DOMContentLoaded", (event) => {
       const password2 = document.getElementById('password2').value;
 
 
-      if (password2 != "" && password != "" && password == password2) {
+      if (password == password2) {
         console.log(`register`);
-        // localStorage.setItem("loggedIn", true);
-        window.location.href = "index.html";
+        document.getElementById('alert').hidden = false;
+        document.getElementById('message').innerHTML = "";
       } else {
         document.getElementById('message').innerHTML = "The passwords don't match"
       }
 
     });
-    console.log(`register`);
   }
 });
